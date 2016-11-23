@@ -1,0 +1,44 @@
+---
+title: "ch15_html"
+author: "Matt & Joshua Wiley"
+date: "18 September 2016"
+output: html_document
+---
+```{r echo=FALSE}
+##notice the 'echo=FALSE'
+##it means the below code will never make it to our knited html
+library(data.table)
+diris <- as.data.table(iris)
+##it is still run, however, so we do have access to it.
+```
+
+#This is the top level header; it is not a comment.
+
+This is plain text that is not code.
+
+If we wish *italics*  or **bold** we can easily add those to these documents. Of course, we may need to mention `rmarkdown` is the package used, and inline code is nice for that. If mathematics are requried, then perhaps x~1~^2^ + x~2~^2^ = 1 is wanted. 
+
+
+##calling out mathematics with a header 2
+On the other hand, we may need the mathematics called out explicitly, in which case  $x^{2} + y^{2}= \pi$ is the way to make that happen.
+
+###I like strikeouts, I'm less clear about level 3 headers.
+I often find when writing reports that I want to say something is ~~absolutely foolish~~ obviously important to key stakeholders.
+
+######If you ever write something that needs Header 6
+Then I believe, as this unordered list suggests:
+
+
+
+* You need to embrace less order starting now
+
+    - Have you considered other careers?
+
+```{r echo=FALSE}
+summary(diris)
+```
+
+However, notice that one can include both the code and the console output:
+```{r fig.align="right"}
+hist(diris$Sepal.Length)
+```

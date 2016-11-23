@@ -1,0 +1,165 @@
+[1] 10
+[1] 100
+[1] 10
+[1] 100
+Called from: top level 
+1: debug()
+function (save = "default", status = 0, runLast = TRUE) 
+.Internal(quit(save, status, runLast))
+<bytecode: 0x000000004494cb30>
+<environment: namespace:base>
+function (save = "default", status = 0, runLast = TRUE) 
+.Internal(quit(save, status, runLast))
+<bytecode: 0x0000000044974ee8>
+<environment: namespace:base>
+1: debug()
+  |                                                                                                                                                                         |                                                                                                                                                                 |   0%  |                                                                                                                                                                         |======================================================                                                                                                           |  33%  |                                                                                                                                                                         |===========================================================================================================                                                      |  67%  |                                                                                                                                                                         |=================================================================================================================================================================| 100%
+[1] "2016-02-14"
+[1] "2016-02-14 13:42:04 CST"
+[1] "America/Chicago"
+[1] "C:/Users/ceo/Google Drive/Books/Apress_AdvancedR/RFiles"
+[1] TRUE
+[1] FALSE
+[1] FALSE
+ch02_text.txt 
+            0 
+ch02_text.txt 
+           -1 
+ch02_text.txt 
+            0 
+ch02_text.txt 
+            0 
+              size isdir mode               mtime               ctime
+ch02_text.txt   62 FALSE  666 2016-02-13 22:01:05 2016-02-13 16:59:57
+chapter01.R   7983 FALSE  666 2016-01-01 02:53:17 2016-01-05 12:26:39
+                            atime exe
+ch02_text.txt 2016-02-13 16:59:57  no
+chapter01.R   2016-01-01 02:53:17  no
+[1] "2016-02-14 13:41:44 CST"
+              size isdir mode               mtime               ctime
+ch02_text.txt   62 FALSE  666 2016-02-13 22:01:05 2016-02-13 16:59:57
+                            atime exe
+ch02_text.txt 2016-02-13 16:59:57  no
+              size isdir mode               mtime               ctime
+ch02_text.txt   62 FALSE  666 2016-02-14 13:41:44 2016-02-13 16:59:57
+                            atime exe
+ch02_text.txt 2016-02-13 16:59:57  no
+[1] TRUE
+[1] TRUE
+[1] FALSE
+[1] "2016-02-14 13:42:04 CST"
+[1] TRUE
+              size isdir mode               mtime               ctime
+ch02_copy.txt   62 FALSE  666 2016-02-14 13:41:44 2016-02-14 13:42:04
+                            atime exe
+ch02_copy.txt 2016-02-14 13:42:04  no
+[1] TRUE
+[1] TRUE
+[1] TRUE
+                   county.name total.population median.income
+1 Adams County, Illinois                  67030         43824
+2 Alexander County, Illinois               8449         28833
+3 Bond County, Illinois                   17904         51946
+4 Boone County, Illinois                  53567         61210
+5 Brown County, Illinois                   6897         38696
+6 Bureau County, Illinois                 35083         45692
+  less.than.high.school high.school some.college bachelors.or.higher
+1            0.06938496   0.3663752    0.3155484          0.24869141
+2            0.17821309   0.3999044    0.3251314          0.09675108
+3            0.08590590   0.3386204    0.3054077          0.27006600
+4            0.12358696   0.3577536    0.2985507          0.22010870
+5            0.24846045   0.3012790    0.3270962          0.12316438
+6            0.09044028   0.3910391    0.3542198          0.16430076
+  inc.greater.than.ave greater.than.thirty.percent.have.bachelors
+1                   no                                         no
+2                   no                                         no
+3                  yes                                         no
+4                  yes                                         no
+5                   no                                         no
+6                   no                                         no
+[1] 10
+[1] 100
+1: debug()
+[1] FALSE
+1: debug()
+[1] 1
+2: bar(2) at #1
+1: foo(2)
+2: bar(2) at #1
+1: foo(2)
+3: do.call(paste("writeForeign", package, sep = ""), c(list(df = df, 
+       datafile = datafile, codefile = codefile), ...))
+2: write.foreign(countiesILExcel, "Ch02/Output2.txt", "Ch02/Output2.sps", 
+       package = "SPSS")
+1: debug(write.foreign(countiesILExcel, "Ch02/Output2.txt", "Ch02/Output2.sps", 
+       package = "SPSS"))
+  |                                                                    |                                                            |   0%  |                                                                    |====================                                        |  33%  |                                                                    |========================================                    |  67%  |                                                                    |============================================================| 100%
+[1] "2016-02-14"
+[1] "2016-02-14 14:16:48 CST"
+[1] "America/Chicago"
+[1] "C:/Users/ceo/Google Drive/Books/Apress_AdvancedR/RFiles"
+[1] TRUE
+[1] FALSE
+[1] FALSE
+ch02_text.txt 
+            0 
+ch02_text.txt 
+           -1 
+ch02_text.txt 
+            0 
+ch02_text.txt 
+            0 
+              size isdir mode               mtime               ctime
+ch02_text.txt  124 FALSE  666 2016-02-14 13:42:04 2016-02-13 16:59:57
+chapter01.R   7983 FALSE  666 2016-01-01 02:53:17 2016-01-05 12:26:39
+                            atime exe
+ch02_text.txt 2016-02-13 16:59:57  no
+chapter01.R   2016-01-01 02:53:17  no
+[1] "2016-02-14 14:16:28 CST"
+              size isdir mode               mtime               ctime
+ch02_text.txt  124 FALSE  666 2016-02-14 13:42:04 2016-02-13 16:59:57
+                            atime exe
+ch02_text.txt 2016-02-13 16:59:57  no
+              size isdir mode               mtime               ctime
+ch02_text.txt  124 FALSE  666 2016-02-14 14:16:28 2016-02-13 16:59:57
+                            atime exe
+ch02_text.txt 2016-02-13 16:59:57  no
+[1] TRUE
+[1] TRUE
+[1] FALSE
+[1] "2016-02-14 14:16:48 CST"
+[1] TRUE
+              size isdir mode               mtime               ctime
+ch02_copy.txt  124 FALSE  666 2016-02-14 14:16:28 2016-02-14 14:16:48
+                            atime exe
+ch02_copy.txt 2016-02-14 14:16:48  no
+[1] TRUE
+[1] TRUE
+[1] TRUE
+                   county.name total.population median.income
+1 Adams County, Illinois                  67030         43824
+2 Alexander County, Illinois               8449         28833
+3 Bond County, Illinois                   17904         51946
+4 Boone County, Illinois                  53567         61210
+5 Brown County, Illinois                   6897         38696
+6 Bureau County, Illinois                 35083         45692
+  less.than.high.school high.school some.college bachelors.or.higher
+1            0.06938496   0.3663752    0.3155484          0.24869141
+2            0.17821309   0.3999044    0.3251314          0.09675108
+3            0.08590590   0.3386204    0.3054077          0.27006600
+4            0.12358696   0.3577536    0.2985507          0.22010870
+5            0.24846045   0.3012790    0.3270962          0.12316438
+6            0.09044028   0.3910391    0.3542198          0.16430076
+  inc.greater.than.ave greater.than.thirty.percent.have.bachelors
+1                   no                                         no
+2                   no                                         no
+3                  yes                                         no
+4                  yes                                         no
+5                   no                                         no
+6                   no                                         no
+[1] 10
+[1] 100
+1: debug(write.dta(countiesILExcel, "Ch02/Output3.dta"))
+Called from: top level 
+Called from: top level 
+[1] 12

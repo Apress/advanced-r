@@ -1,0 +1,83 @@
+---
+title: "Example Scoring Report"
+subtitle: "Item Level Analysis"
+date: "`r Sys.Date()`"
+output:
+  tufte::tufte_handout: default
+---
+
+# Raw Data
+
+Here is a sample of the data uploaded including the first few and last
+rows, and first few and last columns:
+
+```{r echo=FALSE, include = FALSE}
+scores <- scores()
+scores <- as.data.table(scores)
+setnames(scores, 1, "Student")
+
+```
+
+```{r, echo = FALSE, results = 'asis'}
+if (nrow(scores) > 6) {
+ row.index <- c(1:3, (nrow(scores)-2):nrow(scores))
+}
+
+if (ncol(scores) > 6) {
+ col.index <- c(1:3, (ncol(scores)-2):ncol(scores))
+}
+
+kable(scores[row.index, col.index, with = FALSE])
+```
+
+```{r, include = FALSE}
+items <- names(scores)[-1]
+
+scores[, SUM := rowSums(scores[, items, with = FALSE])]
+
+## now calculate biserial correlations
+## first melt data to be long
+scores.long <- melt(scores, id.vars = c("Student", "SUM"))
+
+## calculate biserial correlation, by item
+## order from high to low
+biserial.results <- scores.long[, .(
+  r = round(biserial.cor(SUM, value, level = 2), 3),
+  Correct = round(mean(value) * 100, 1)
+  ), by = variable][order(r, decreasing = TRUE)]
+
+
+alpha.results <- cronbach.alpha(scores[, !c("Student", "SUM"), with=FALSE])
+
+rasch.results <- rasch(scores[,!c("Student", "SUM"), with=FALSE])
+
+```
+
+The test overall had `r ifelse(alpha.results$alpha > .6, "acceptable
+reliability", "low reliability")` of
+alpha = `r format(alpha.results$alpha, FALSE, 2, 2)`.^[Alpha ranges from 0 to 1, with one indicating a perfectly reliable test.]
+
+The graph shows the measurement error by level of
+ability.^[Higher values indicate more measurement error, indicating the test is less reliable at very low and very high ability levels (scores).]
+
+```{r, echo = FALSE, fig.width = 5, fig.height = 4}
+
+## The Standard Error of Measurement can be plotted by
+vals <- plot(rasch.results, type = "IIC", items = 0, plot = FALSE)
+plot(vals[, "z"], 1 / sqrt(vals[, "info"]),
+     type = "l", lwd = 2, xlab = "Ability", ylab = "Standard Error",
+     main = "Standard Error of Measurement")
+
+```
+
+
+
+# Item Analysis
+
+Results for individual items are shown in the following
+table.^[*r* indicates the point biserial correlation of an item with the total score. *Correct* indicates the percent of correct responses to a particular item. The items are sorted from highest to lowest correlation.]
+
+```{r, echo = FALSE, results = 'asis'}
+kable(biserial.results)
+```
+
